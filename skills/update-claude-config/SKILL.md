@@ -48,7 +48,8 @@ Run `~/claude-config/install.sh`. It's idempotent: it backs up any real file it 
 - Commit everything with this message format:
   `Update Claude config from <macOS|Linux> (<hostname>): <short summary>`
   The message is one line only: no body and no Co-Authored-By trailer.
-- Run `git push`. If there's no remote or the push is rejected, explain why and how to fix it. For example: create the private repo `claude-config` on GitHub, then run `git push -u origin main`.
+- **Ask before pushing.** Show the commits about to go out (`git log --oneline @{u}..`) and ask the user to confirm. Wait for an explicit yes, then run `git push` as a separate command.
+- If there's no remote or the push is rejected, explain why and how to fix it. For example: create the private repo `claude-config` on GitHub, then run `git push -u origin main`.
 
 ## 7. Report
 Briefly tell the user:

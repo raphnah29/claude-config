@@ -46,9 +46,10 @@ The handoff file is pushed to GitHub, so:
    - `git -C ~/claude-config add handoffs/<topic>.md` (never `-A`, since other uncommitted changes in the repo are not part of the handoff)
    - `git -C ~/claude-config commit -m "Handoff <topic> from <macOS|Linux> (<hostname>)"`
    - The message is one line only: no body and no Co-Authored-By trailer.
-   - Then `git -C ~/claude-config push`.
-   - Running `/handoff save` is the user's explicit request to commit and push.
-6. If the push fails, explain why. If it succeeds, report the file path and the resume command for the other machine: `/handoff load <topic>`.
+   - Running `/handoff save` is the user's explicit request to commit. It is **not** permission to push.
+6. **Ask before pushing.** Show the commits about to go out (`git -C ~/claude-config log --oneline @{u}..`), warn that they'll be sent to GitHub, and ask the user to confirm. Wait for an explicit yes, then run `git -C ~/claude-config push` as a separate command.
+   - If the user says no, leave the commit local and tell them to run `git -C ~/claude-config push` later.
+7. If the push fails, explain why. If it succeeds, report the file path and the resume command for the other machine: `/handoff load <topic>`.
 
 ## Load
 1. Run `git -C ~/claude-config pull --rebase --autostash`. If it fails (network or conflict), say so and continue with the local copy.

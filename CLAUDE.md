@@ -4,6 +4,7 @@
 - I mainly write C/C++. Follow the nearest `.clang-format` (Google-based) and run `clang-format -i` on files you edit.
 - Prefer CMake: configure/build in `build/` (`cmake -B build && cmake --build build`), then `ctest --test-dir build`.
 - Never commit or push unless I ask.
+- Before **every** `git push`, even when a skill or an earlier message said to push: stop and show the branch, the remote and the commits about to be pushed (`git log --oneline @{u}..`), then ask me and wait for an explicit yes. Never chain the push with other commands.
 - Git commits: one-line message only (no body), and no Co-Authored-By / Claude attribution.
 
 ## Two environments: Linux + macOS
