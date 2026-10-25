@@ -13,3 +13,5 @@ git clone git@github.com:raphnah29/claude-config.git ~/claude-config
 Then, in Claude Code: `/update-claude-config` to pull, or `/update-claude-config <change>` to change something and push.
 
 Remote: `git@github.com:raphnah29/claude-config.git`
+
+To continue a session on the other machine: `/handoff save <topic>` here, then `/handoff load <topic>` there (files in `handoffs/`).
